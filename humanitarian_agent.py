@@ -8,18 +8,13 @@ from datetime import datetime
 from typing import List, Tuple
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
-
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
-
-from google.genai import types, Client
 from google.genai import types, Client
 from google.adk import Agent, Runner
 from google.adk.sessions import InMemorySessionService
 from google.adk.tools import google_search
 
-from google.adk.sessions import InMemorySessionService
-from google.adk.tools import google_search
 
 # ---------------------------------------------------------
 # 1. STRICT OUTPUT SANITIZATION
