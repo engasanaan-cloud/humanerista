@@ -13,7 +13,14 @@ from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 
 from google.genai import types, Client
-from google.adk import Agent, Runner
+try:
+    from google.adk import Agent, Runner
+    from google.adk.sessions import InMemorySessionService
+    from google.adk.tools import google_search
+except ModuleNotFoundError:
+    from google.genai.adk import Agent, Runner
+    from google.genai.adk.sessions import InMemorySessionService
+    from google.genai.adk.tools import google_search
 from google.adk.sessions import InMemorySessionService
 from google.adk.tools import google_search
 
@@ -38,8 +45,14 @@ APPROVED_DOMAINS_PROMPT = (
 )
 
 VALID_SECTORS = [
-    "WASH", "Food Security", "Health", "Shelter", "Protection", 
-    "Education", "Nutrition", "Early Recovery", "Livelihoods", "Agriculture", "Multi-Sector"
+    "WASH", 
+    "Food Security", 
+    "Nutrition", 
+    "Health", 
+    "Protection", 
+    "Shelter & NFI", 
+    "Education", 
+    "Early Recovery & Livelihoods"
 ]
 
 # ---------------------------------------------------------
