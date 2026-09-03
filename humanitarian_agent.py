@@ -13,14 +13,10 @@ from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 
 from google.genai import types, Client
-try:
-    from google.adk import Agent, Runner
-    from google.adk.sessions import InMemorySessionService
-    from google.adk.tools import google_search
-except ModuleNotFoundError:
-    from google.genai.adk import Agent, Runner  # type: ignore
-    from google.genai.adk.sessions import InMemorySessionService  # type: ignore
-    from google.genai.adk.tools import google_search  # type: ignore
+from google.genai import types, Client
+from google.adk import Agent, Runner
+from google.adk.sessions import InMemorySessionService
+from google.adk.tools import google_search
 
 from google.adk.sessions import InMemorySessionService
 from google.adk.tools import google_search
