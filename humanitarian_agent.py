@@ -18,9 +18,10 @@ try:
     from google.adk.sessions import InMemorySessionService
     from google.adk.tools import google_search
 except ModuleNotFoundError:
-    from google.genai.adk import Agent, Runner
-    from google.genai.adk.sessions import InMemorySessionService
-    from google.genai.adk.tools import google_search
+    from google.genai.adk import Agent, Runner  # type: ignore
+    from google.genai.adk.sessions import InMemorySessionService  # type: ignore
+    from google.genai.adk.tools import google_search  # type: ignore
+
 from google.adk.sessions import InMemorySessionService
 from google.adk.tools import google_search
 
